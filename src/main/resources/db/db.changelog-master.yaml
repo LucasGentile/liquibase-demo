@@ -1,0 +1,32 @@
+databaseChangeLog:
+- changeSet:
+    id: 1512804120619-1
+    author: Lucas_Gentile (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              constraints:
+                nullable: false
+            name: ID
+            type: BIGINT(19)
+        - column:
+            name: AGE
+            type: BIGINT(19)
+        - column:
+            name: FAVORITE_PROGRAMMING_LANGUAGE
+            type: VARCHAR(255)
+        - column:
+            name: NAME
+            type: VARCHAR(255)
+        tableName: IT_STUDENT
+- changeSet:
+    id: 1512804120619-2
+    author: Lucas_Gentile (generated)
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: CONSTRAINT_9
+        tableName: IT_STUDENT
+
