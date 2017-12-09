@@ -15,7 +15,9 @@
     <li><a href="https://projects.spring.io/spring-boot">Spring Boot</a></li> 
     <li><a href="http://www.liquibase.org">Liquibase</a></li> 
     <li><a href="https://gradle.org">Gradle</a></li>  
-    <li><a href="http://www.h2database.com/html/main.html">Base H2</a></li> 
+    <li><a href="http://www.h2database.com/html/main.html">H2 Database</a></li> 
+    <li><a href="https://projectlombok.org/">Lombok</a></li>
+    <li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
 </ul>
 
 <h1>LIQUIBASE</h1>
@@ -24,26 +26,25 @@
 
 <h3>O que é?</h3>
 
-O Liquibase é uma ferramenta para evolução do schema de banco de dados de aplicações em Java.
+O LiquiBase é uma ferramenta para evolução do schema de banco de dados de aplicações em Java.
 
 <h3>Para que serve?</h3>
 
-Para facilitar o vescionamento do banco de dados utilizado pela aplicação.
+Para facilitar o versionamento do banco de dados utilizado pela aplicação.
 
 <h3>Principais características:</h3>
 
 <ul style="list-style-type:square">
-    <li>Suporte a branching e merging;</li>
-    <li>Suporte a múltiplos desenvolvimentos;</li>
-    <li>Suporte a multiplas bases (MySQL, PostgreSQL, Oracle, Sql Server, H2, etc.);</li>
-    <li>Suporte a múltiplos tipos de formatos de configuração (XML, JSON, YAML e SQL);</li>
-    <li>Suporte a contextos lógicos ( Teste, Desenvolvimento, Homologação);</li>
-    <li>Gerador de documentação de banco de dados;</li>
-    <li>Gerador de comparações (DIFF);</li>
-    <li>Gera automáticamente código SQL para revisão;</li>
-    <li>Gera automáticamente código SQL para revisão;</li>
-    <li>Não requer conexão com banco de dados ativa;</li>
-    <li>Possui código aberto e extensível (Licença Apache 2.0);</li>
+    <li>Suporte a branching e merging</li>
+    <li>Suporte a múltiplos desenvolvimentos</li>
+    <li>Suporte a múltiplas bases (MySQL, PostgreSQL, Oracle, Sql Server, H2, etc...)</li>
+    <li>Suporte a múltiplos formatos de arquivo de configuração (XML, JSON, YAML e SQL)</li>
+    <li>Suporte a contextos lógicos (DEV, QA e PROD por exemplo)</li>
+    <li>Gerador de documentação de banco de dados</li>
+    <li>Gerador de "diffs"</li>
+    <li>Gera automaticamente código SQL para revisão</li>
+    <li>Não requer conexão com banco de dados ativa</li>
+    <li>Possui código aberto e extensível (Licença Apache 2.0)</li>
 </ul>
 
 <h2>Intruções de instalação</h2>
@@ -232,15 +233,6 @@ databaseChangeLog:
         constraintName: CONSTRAINT_9
         tableName: IT_STUDENT
 ```
-
-```
-mvn install -Dliquibase.dropFirst=true
-```
-O argumento liquibase.dropFirst=true indica ao Liquibase que ele deve apagar todo o banco e executar todos os scripts SQL novamente. Se esse argumento não for informado, ou for igual a false, o Liquibase executará apenas os scripts que ainda não foram executados, pois ele controla os changeSets que já foram executados em uma tabela própria. Outra opção para fazer o Liquibase rodar os scripts do banco é executar o comando update do próprio plugin, como demonstrado a seguir:
-```
-mvn liquibase:update -Dliquibase.dropFirst=true
-```
-
 
 <h2>Referências</h2>
 
